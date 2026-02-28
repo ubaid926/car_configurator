@@ -10,23 +10,23 @@ export default function Model({ color, isEnabled }) {
   }, [color])
   useEffect(() => {
     scene.traverse((child) => {
-      if (child.isMesh && child.name.includes('Cylinder007_tire_0')) {
-        child.visible = isEnabled; // Hides the tyre
-      }
-      if (child.isMesh && child.name.includes('Cylinder008_tire_0')) {
-        child.visible = isEnabled; // Hides the tyre
-      }
-      if (child.isMesh && child.name.includes('Cylinder009_tire_0')) {
-        child.visible = isEnabled; // Hides the tyre
-      }
-      if (child.isMesh && child.name.includes('Cylinder010_tire_0')) {
+      // if (child.isMesh && child.name.includes('Cylinder007_tire_0')) {
+      //   child.visible = isEnabled; // Hides the tyre
+      // }
+      // if (child.isMesh && child.name.includes('Cylinder008_tire_0')) {
+      //   child.visible = isEnabled; // Hides the tyre
+      // }
+      // if (child.isMesh && child.name.includes('Cylinder009_tire_0')) {
+      //   child.visible = isEnabled; // Hides the tyre
+      // }
+      if (child.isMesh && child.name.includes('Front_Mirror_For_Back_View')) {
         child.visible = isEnabled; // Hides the tyre
       }
       console.log('child==> ', child.name)
     })
 
   }, [isEnabled])
-  const { scene, materials } = useGLTF('/free_1972_datsun_240k_gt/scene.gltf')
+  const { scene, materials } = useGLTF('/Untitled.glb')
   const { camera } = useThree()
 
   const handleGlobalKeyDown = function (event) {
